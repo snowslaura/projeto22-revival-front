@@ -1,6 +1,6 @@
 import {Content, FirstElement, Header,Footer,LogoRevival,Option} from "./styles"
 import { HiUserCircle } from "react-icons/hi";
-import { Slide } from '@mui/material'
+import Carousel from "../../components/Carousel/Carousel"
 
 function HomePage(){
  
@@ -9,9 +9,9 @@ function HomePage(){
             <FirstElement>
                 <Header>
                     <LogoRevival>revival</LogoRevival>                  
-                     <HiUserCircle/>
-                </Header>
-                
+                    <HiUserCircle/>
+                </Header>          
+                <Carousel></Carousel>
                 <Footer>
                     <Option>Eletrônicos</Option>
                     <Option>Utensílios Domésticos</Option>

@@ -18,7 +18,7 @@ export const Content = styled.div`
 
 export const FirstElement = styled.div`
     width: 95%;
-    height: 30vh; 
+    height: 40vh; 
     background: #FFFFFF;
     border-radius: 20px 20px 0px 0px;
     margin-top: 50px;
@@ -26,6 +26,14 @@ export const FirstElement = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 1200px) {
+        width: 80%;
+        height: 60vh; 
+    }
+
+
 `
 
 export const Header = styled.div`
@@ -40,6 +48,7 @@ export const Header = styled.div`
     svg{
         font-size: 25px;
         color:#FF5F49;
+        cursor: pointer;
     }
 `
 
@@ -52,9 +61,14 @@ export const Option = styled.p`
     font-size:15px;
     word-break: normal;
     display:flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 10px;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    min-width: 20%;
+    cursor: pointer;
+    
+
     @media (max-width:600px) {
         font-size:8px;
     }
