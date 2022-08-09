@@ -48,7 +48,8 @@ export const Rigth = styled.div`
         height: 100%;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
-        border-bottom-left-radius: 39.4737px;
+        border-bottom-left-radius: none;
+        border-bottom-right-radius: none;
     }
 `
 
