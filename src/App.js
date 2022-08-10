@@ -3,7 +3,7 @@ import "../src/assets/styles/reset.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import SignUp from "./templates/signUpPage";
-import SignIn from './templates/signInPage';
+import SignIn from './templates/signUpPage/signInPage';
 import HomePage from './templates/HomePage/HomePage';
 import ProfilePage from "./templates/ProfilePage"
 
