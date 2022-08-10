@@ -27,7 +27,6 @@ export default function Carousel(){
         const min = 0;
         const max = images.length-1
         let index = Math.floor(Math.random() * (max - min + 1) + min)
-        console.log(index)
         setIndex(index)
     }
     

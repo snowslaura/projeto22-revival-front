@@ -115,7 +115,6 @@ export const NewItemsContainer = styled.div`
     width: 100%;
     height: 100%;
 `
-
 export const Item = styled.div`
     width: 30%;
     height: 200px;  
@@ -180,17 +179,18 @@ export const AllItems = styled.div`
 
 `
 
-export const ItemGeneral = styled.div`
-    width: 150px;
-    height: 200px; 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14));
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    margin: 2%;
+// export const ItemGeneral = styled.div`
+//     width: 150px;
+//     height: 200px; 
+//     background-image: ${props=>props.url?`item.imageUrl`:`item.imageUrl`};
+//     background: linear-gradient(0deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14));
+//     background-size: cover;
+//     background-position: center;
+//     border-radius: 20px;
+//     margin: 2%;
 
-    @media (max-width: 611px) {
-        height: 200px; 
-        width: 200px;
-    }
-`
+//     @media (max-width: 611px) {
+//         height: 200px; 
+//         width: 200px;
+//     }
+// `

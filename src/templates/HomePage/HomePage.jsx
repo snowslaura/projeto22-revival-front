@@ -1,9 +1,42 @@
-import {Content, FirstElement, Header,Footer,LogoRevival,Option,NewItems, Item, NewItemsGeneral, NewItemsContainer, AllItems, ItemGeneral} from "./styles"
+import {Content, FirstElement, Header,Footer,LogoRevival,Option,NewItems, NewItemsGeneral, NewItemsContainer, AllItems} from "./styles"
 import { HiUserCircle } from "react-icons/hi";
 import Carousel from "../../components/Carousel/Carousel"
-import bike from  "../../assets/img/bike.jpg"
+import { useState, useEffect} from "react";
+import axios from "axios"
+import { ItemGeneral } from "../../components/Item/Item";
+import { LatestItem } from "../../components/LatestItem/LatestItem"
 
 function HomePage(){
+
+    const [items, setItems] = useState([])
+    const [latestItems, setlatestItems] = useState([])
+
+    useEffect( ()=>{
+        fetchItems();
+        fetchLatestItems();
+    },[])
+    
+    function fetchItems(){
+        const promise = axios.get(`${process.env.REACT_APP_API_URL}/items`)
+        promise.then(({data})=>{
+            setItems(data)
+        })
+        promise.catch((e)=>{
+            console.error(e)
+        })       
+    }
+
+    function fetchLatestItems(){
+        const promise = axios.get(`${process.env.REACT_APP_API_URL}/latestitems`)
+        promise.then(({data})=>{
+            setlatestItems(data)            
+        })
+        promise.catch((e)=>{
+            console.error(e)
+        })
+    }
+
+
  
     return(
         <Content>
@@ -24,9 +57,11 @@ function HomePage(){
             <NewItems>
                 <p>NOVOS CHEGADOS</p>
                 <NewItemsContainer>
-                    <Item style={{backgroundImage: `url(${bike})`}}></Item>
-                    <Item style={{backgroundImage: `url(${bike})`}}></Item>
-                    <Item style={{backgroundImage: `url(${bike})`}}></Item>
+                    {latestItems.map((item, index)=>{
+                        return(
+                            <LatestItem key={index} item={item}/>                   
+                        )
+                    })}
                 </NewItemsContainer>              
             </NewItems>
             <NewItemsGeneral>
@@ -34,16 +69,12 @@ function HomePage(){
                         <p>só coisa bacana</p>
                     </div>
                     <AllItems>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>   
-                        <ItemGeneral style={{backgroundImage: `url(${bike})`}}></ItemGeneral>
+                        {items.map(((item, index) =>{                            
+                            return(
+                                <ItemGeneral key={index} item={item}/>
+                            )
+                        }))
+                        }
                     </AllItems>
                    
             </NewItemsGeneral>
