@@ -15,11 +15,13 @@ export const ModalContainer = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 25px;   
-    width: 484px;
-    min-height: 300px;
+    width: 384px;
+    min-height: 200px;
     background-color: #FFF;
     border-radius: 20px; 
+   
 `
 
 export const Header = styled.div`
@@ -38,12 +40,14 @@ export const Header = styled.div`
 export const Logo = styled.p`
     font-family: 'Poppins';
     font-size:40px;
+
 `
 export const SignUp = styled.form`
     display: flex;
     flex-direction: column; 
     align-items:center;
     margin-top: 10px;
+
 `
 
 export const Input = styled.input`
@@ -94,13 +98,34 @@ export const Button = styled.button`
     
 `
 
+export const SignOut = styled.div`
+    cursor: pointer;
+    margin:15px;
+    display: flex;
+
+
+    svg{
+        margin-left: 20px;
+    }
+`
+
 export const SignUpButton = styled.p`
     cursor: pointer;
     margin:15px;
+    display: flex;
+
+    svg{
+        margin-left: 20px;
+    }
 `
 export const SignInButton = styled.p`
     cursor: pointer;
     margin:15px;
+    display: flex;
+
+    svg{
+        margin-left: 20px;
+    }       
 `
 
 export const Body = styled.div`
@@ -109,6 +134,6 @@ export const Body = styled.div`
     justify-content: space-between;
     align-items: center;
     text-align: center;  
-    flex: 10%;
+    flex: 10%;  
 `
 
