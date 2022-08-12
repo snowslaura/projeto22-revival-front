@@ -1,22 +1,38 @@
 import {Content, FirstElement, Header,Footer,LogoRevival,Option,NewItems, NewItemsGeneral, NewItemsContainer, AllItems} from "./styles"
 import { HiUserCircle } from "react-icons/hi";
 import Carousel from "../../components/Carousel/Carousel"
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
 import axios from "axios"
 import { ItemGeneral } from "../../components/Item/Item";
 import { LatestItem } from "../../components/LatestItem/LatestItem"
-import {AuthModal} from "../../components/AuthModal/AuthModal"
+import { AuthModal } from "../../components/AuthModal/AuthModal"
+
+import isSignOutOpenContext from "../../contexts/isSignUpOpenContext";
 
 function HomePage(){
 
     const [items, setItems] = useState([])
     const [latestItems, setlatestItems] = useState([])
     const [ismodalOpen, setIsmodalOpen] = useState(false)
+    const {setIsSignOutOpen} = useContext(isSignOutOpenContext)
 
     useEffect( ()=>{
         fetchItems();
         fetchLatestItems();
+        verifyLocalStorage();
     },[])
+
+    
+    function verifyLocalStorage(){
+        const userDataLocalStorage = localStorage.getItem("userData")
+        const unserializedData = JSON.parse(userDataLocalStorage)
+        const userId = unserializedData?.userId
+
+        if(userId!== undefined){
+            setIsmodalOpen(false) 
+            setIsSignOutOpen(true)
+        }      
+    }
     
     function fetchItems(){
         const promise = axios.get(`${process.env.REACT_APP_API_URL}/items`)

@@ -108,6 +108,17 @@ export const SignOut = styled.div`
         margin-left: 20px;
     }
 `
+export const MyAccount = styled.div`
+    cursor: pointer;
+    margin:15px;
+    display: flex;
+
+
+    svg{
+        margin-left: 20px;
+    }
+`
+
 
 export const SignUpButton = styled.p`
     cursor: pointer;
