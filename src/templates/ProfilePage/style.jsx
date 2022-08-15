@@ -110,9 +110,9 @@ export const NewItems = styled.div`
 `
 export const NewItemsContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 15px;
     width: 100%;
-    height: 100%;
 `
