@@ -9,6 +9,7 @@ import userContext from './contexts/userContext';
 import isSignOutOpenContext from "./contexts/isSignUpOpenContext"
 
 import { useState } from 'react';
+import ItemPage from './templates/ItemPage/ItemPage';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Routes>      
                 <Route path="/" element={<HomePage />} />
                 <Route path="/profile/:id" element={<ProfilePage />} />
+                <Route path="/item/:itemId" element={<ItemPage />} />
             </Routes>
           </userContext.Provider>
         </isSignOutOpenContext.Provider>

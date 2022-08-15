@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export const Content = styled.div`
     width: 100%;
-    min-height: 300px;
+    height:50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -22,17 +22,11 @@ export const FirstElement = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     @media (min-width: 1200px) {
         width: 80%;
-        height: 60vh;
+        height: 60vh; 
     }
 
-    @media (min-width: 1440px) {
-        width: 80%;
-        height: 40vh;
-    }
-   
 
 `
 
@@ -55,7 +49,6 @@ export const Header = styled.div`
 export const LogoRevival = styled.p`
     font-family: 'Poppins';
     font-size:20px;
-    cursor: pointer;
 `
 export const Option = styled.p`
     font-family: 'Poppins';
@@ -84,7 +77,8 @@ export const Footer = styled.div`
     align-items: center;
     padding:10px;
 `
-export const NewItems = styled.div`
+
+export const ItemBox = styled.div`
     width: 95%;
     background-color: #FFF;
     margin-top: 50px;
@@ -95,8 +89,8 @@ export const NewItems = styled.div`
         font-family: 'Poppins';
         font-weight: 900;
         background-color: #FFF;
-        font-size: 40px;
-        letter-spacing:-4px;
+        font-size: 20px;
+        letter-spacing:-1px;
         font-style:oblique;
 
 
@@ -114,90 +108,26 @@ export const NewItems = styled.div`
         height: 200px; 
     }
 `
-export const NewItemsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 15px;
-    width: 100%;
-    height: 100%;
-`
+
 export const Item = styled.div`
-    width: 30%;
-    height: 200px;  
+    width: 150px;
+    height: 200px; 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14));
     background-size: cover;
     background-position: center;
     border-radius: 20px;
+    margin: 2%;
 
     @media (max-width: 611px) {
-        height: 100px; 
-        width: 100px;
+        height: 200px; 
+        width: 200px;
     }
 `
-
-export const ItemsContainer = styled.div`
-    width: 95%;
-    height: 500px; 
-    background-color: #FFF;
-    margin-top: 15px;
-    box-shadow: 0px 4px 10px #FAB396;
-    padding: 15px;
-`
-
-export const NewItemsGeneral = styled.div`
-    width: 95%;
-    background-color: #fff;
-    margin-top: 50px;
-    box-shadow: 0px 4px 10px #FAB396;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
-
-    p{
-        font-family: 'Poppins';
-        font-weight: 900;
-        font-size: 40px;
-        letter-spacing:-4px;
-        font-style:oblique;
-
-        @media (max-width: 611px) {
-            font-size: 30px;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        width: 80%;
-    }
-
-   
-`
-
-export const AllItems = styled.div`
-    margin-top: 15px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-`
-
-// export const ItemGeneral = styled.div`
-//     width: 150px;
-//     height: 200px; 
-//     background-image: ${props=>props.url?`item.imageUrl`:`item.imageUrl`};
-//     background: linear-gradient(0deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14));
-//     background-size: cover;
-//     background-position: center;
-//     border-radius: 20px;
-//     margin: 2%;
-
-//     @media (max-width: 611px) {
-//         height: 200px; 
-//         width: 200px;
-//     }
+// export const NewItemsContainer = styled.div`
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     justify-content: space-evenly;
+//     margin-top: 15px;
+//     width: 100%;
 // `

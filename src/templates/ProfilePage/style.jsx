@@ -22,6 +22,7 @@ export const FirstElement = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
     @media (min-width: 1200px) {
         width: 80%;
         height: 60vh; 

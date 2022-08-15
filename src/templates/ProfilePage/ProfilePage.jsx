@@ -42,13 +42,13 @@ function ProfilePage(){
             setIsmodalOpen(true) 
         }
         //pq o userData aqui está undefined se ele é um contexto e ele está aparecendo quando eu faço console.log na linha 31
-        if(userId !== userData.userId){ 
-            // console.log("entrei nesse caraio");
-            // console.log(userId);
-            // console.log(userData);
-            setIsSignOutOpen(false)
-            setIsmodalOpen(true)
-        }
+        // if(userId !== userData.userId){ 
+        //     console.log("entrei nesse caraio");
+        //     console.log(userId);
+        //     console.log(userData);
+        //     setIsSignOutOpen(false)
+        //     setIsmodalOpen(true)
+        // }
     }
 
     const navigate = useNavigate()

@@ -2,6 +2,7 @@ import {Content, FirstElement, Header,Footer,LogoRevival,Option,NewItems, NewIte
 import { HiUserCircle } from "react-icons/hi";
 import Carousel from "../../components/Carousel/Carousel"
 import { useState, useEffect, useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import { ItemGeneral } from "../../components/Item/Item";
 import { LatestItem } from "../../components/LatestItem/LatestItem"
@@ -16,13 +17,16 @@ function HomePage(){
     const [ismodalOpen, setIsmodalOpen] = useState(false)
     const {setIsSignOutOpen} = useContext(isSignOutOpenContext)
 
+   
     useEffect( ()=>{
         fetchItems();
         fetchLatestItems();
         verifyLocalStorage();
     },[])
 
-    
+  
+
+
     function verifyLocalStorage(){
         const userDataLocalStorage = localStorage.getItem("userData")
         const unserializedData = JSON.parse(userDataLocalStorage)
@@ -79,7 +83,7 @@ function HomePage(){
                     <NewItemsContainer>
                         {latestItems.map((item, index)=>{
                             return(
-                                <LatestItem key={index} item={item}/>                   
+                                <LatestItem  key={index} item={item}/>
                             )
                         })}
                     </NewItemsContainer>              
