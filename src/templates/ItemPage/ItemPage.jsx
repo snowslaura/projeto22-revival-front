@@ -3,7 +3,7 @@ import { HiUserCircle } from "react-icons/hi";
 import { useNavigate, useParams} from "react-router-dom";
 import { useEffect, useContext } from "react";
 import axios from "axios";
-import { Content, FirstElement, Footer, Header, Item, ItemBox, LogoRevival } from "./style";
+import { Button, Content, Data, FirstElement, Footer,Form, Header, Information, InformationContent, Input, Item, ItemBox, ItemInformations, LogoRevival,  Question,  Questions } from "./style";
 import { AuthModal } from "../../components/AuthModal/AuthModal";
 import userContext from "../../contexts/userContext";
 import isSignOutOpenContext from "../../contexts/isSignUpOpenContext";
@@ -61,6 +61,7 @@ function ItemPage(){
         promise.then(({data})=>{
             setItemImageUrl(data.imageUrl)
             setItemName(data.name)
+            
         })
     }
 
@@ -83,9 +84,52 @@ function ItemPage(){
                     </Footer>
                 </FirstElement>
                 <ItemBox>
-                    <p>{itemName    }</p>
-                    <Item style={{backgroundImage: `url(${itemImageUrl})`}}/>
+                    <h3>{itemName}</h3>  
+                    <ItemInformations>
+                        <Item style={{backgroundImage: `url(${itemImageUrl})`}}/>
+                        <InformationContent>
+                            <Information>
+                                <Data>
+                                    <p>Dados do item</p>
+                                    <p>Decrição:</p>
+                                    <p>Faixa de valor:</p>
+                                </Data>
+                            </Information>
+                            <Information>
+                                <Data>
+                                    <p>Dados do proprietário</p>
+                                    <p>Nome:</p>
+                                    <p>Endereço:</p>
+                                </Data>
+                            </Information>
+                        </InformationContent>
+                    </ItemInformations>                  
+                    <Questions>
+                        <p>Perguntas</p>
+                        <h6>Gostaria de fazer uma pergunta?</h6>
+                        <Form>
+                            <Input placeholder="Escreva aqui sua pergunta"></Input>
+                            <Button>Enviar</Button>
+                        </Form>
+                        <Question>
+                            <p>Quanto tempo de uso tem esse objeto?</p>
+                            <h6>Aproximadamente 3 anos</h6>
+                        </Question>
+                        <Question>
+                            <p>Quanto tempo de uso tem esse objeto?</p>
+                            <h6>Aproximadamente 3 anos</h6>
+                        </Question>
+                        <Question>
+                            <p>Quanto tempo de uso tem esse objeto?</p>
+                            <h6>Aproximadamente 3 anos</h6>
+                        </Question>
+                        <Question>
+                            <p>Quanto tempo de uso tem esse objeto?</p>
+                            <h6>Aproximadamente 3 anos</h6>
+                        </Question>
+                    </Questions>
                 </ItemBox>
+                
         </Content>
         </> 
     )
